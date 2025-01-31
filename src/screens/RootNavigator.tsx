@@ -4,6 +4,10 @@ import FlatListScreen from "./FlatListScreen"
 import SectionListScreen from "./SectionListScreen"
 import TouchableScreen from "./TouchableScreen"
 import ModalScreen from "./ModalScreen"
+import PullToRefreshScreen from "./PullToRefresh"
+import DataFetchingScreen from "./DataFetching"
+import AxiosDemoScreen from "./Axios"
+import ThemeDemoScreen from "./ThemeScreen"
 
 
 export type RootStackListProp= {
@@ -12,11 +16,13 @@ export type RootStackListProp= {
     SectionListDemo: undefined
     TouchableDemo: undefined
     ModalDemo: undefined
+    PullToRefreshDemo: undefined
+    DataFetchingDemo: undefined 
+    AxiosDemo: undefined
+    ThemeDemo: undefined
 }
 
-
 const Stack  = createStackNavigator<RootStackListProp>()
-
 
 const RootNavigator : React.FC  =() => {
     return (
@@ -26,6 +32,10 @@ const RootNavigator : React.FC  =() => {
             <Stack.Screen name="SectionListDemo" component={SectionListScreen} />
             <Stack.Screen name="TouchableDemo" component={TouchableScreen} />
             <Stack.Screen name="ModalDemo" component={ModalScreen} />
+            <Stack.Screen name="PullToRefreshDemo" component={PullToRefreshScreen} />
+            <Stack.Screen name="DataFetchingDemo" component={DataFetchingScreen} />
+            <Stack.Screen name="AxiosDemo" component={AxiosDemoScreen} />
+            <Stack.Screen name="ThemeDemo" component={ThemeDemoScreen} />
         </Stack.Navigator>
     )
 }

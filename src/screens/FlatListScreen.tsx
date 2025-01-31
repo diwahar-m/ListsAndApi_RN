@@ -5,9 +5,6 @@ const FLAT_LIST = Array.from({length: 50}, (_, index)=> ({
     title: `Item: ${index+1}`
 }))
 
-console.log(FLAT_LIST?.[0])
-
-
 const FlatListScreen = () => {
 
     const handleRenderItem = ({item} :  {item: {id: string,title: string}})=> {

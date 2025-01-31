@@ -1,21 +1,21 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { Modal, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 
-const ModalScreen = () => {
-    const [showModal, setShowModal] = useState<boolean>(false)
-    const []
+const ModalScreen : React.FC = () => {
+    const [showModal, setShowModal] = useState(false)
+
+    
     return <View style={styles.container}>
         <Text style={styles.headerText}>Modal Demo</Text>
         <TouchableOpacity 
-          onPress={()=> setShowModal(!showModal)}
+          onPress={()=> setShowModal(true)}
            style={styles.btn} 
            >
                 <Text style={styles.text}>Open Modal</Text>  
         </TouchableOpacity>
-        <Modal 
-            visible={showModal}
+        <Modal visible={showModal}
             transparent={true}
-            animationType="slide"
+            animationType='slide'
             onRequestClose={()=> setShowModal(false)}
         >
             <View style={styles.centerView}>
@@ -25,7 +25,7 @@ const ModalScreen = () => {
                         onPress={()=> setShowModal(false)}
                         style={styles.btn} 
                         >
-                                <Text style={styles.text}>Close Modal</Text>  
+                            <Text style={styles.text}>Close </Text>  
                     </TouchableOpacity>
 
                 </View>
@@ -37,7 +37,7 @@ const ModalScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1, 
-        padding: 15
+        padding: 10
     },
     headerText: {
         fontSize: 20, 
@@ -50,7 +50,6 @@ const styles = StyleSheet.create({
         minWidth: 250, 
         marginBottom: 10, 
         alignItems:'center'
-
     }, 
     btnTxt: {
         fontSize: 20, 
@@ -68,18 +67,19 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0,0,0,0.5)'
     }, 
     modalView: {
+        margin: 10,
+        backgroundColor: 'white',
         borderRadius: 20, 
         padding: 35, 
-        alignItems: 'center', 
-        shadowColor: '#000', 
+        alignItems: 'center',
+        shadowColor: '#000',
         shadowOffset: {
             width: 0, 
             height: 2
         }, 
-        shadowOpacity: 0.25, 
-        shadowRadius: 4, 
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
         elevation:5
-
     }
 })
 
